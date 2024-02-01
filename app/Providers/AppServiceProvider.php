@@ -21,6 +21,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     { 
+        Schema::defaultStringLength(191);
+        
         if (\Schema::hasTable('smtp_settings')) {
 
             $smtpsetting = SmtpSetting::first();
